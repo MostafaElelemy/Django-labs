@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nav Bar</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+  </head>
+  <body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="#" class="brand" aria-label="Homepage">
+        
+        <span>MySite</span>
+      </a>
+
+      <div class="links" id="nav-links">
+        <a href="{% url 'courses' %}" aria-current="page">Home</a>
+        <a href="{% url 'delete_course' %}">data</a>
+     
+      </div>
+
+    </nav>
+     <h1 style="text-align: center;   display: sticky;
+  ;">Welcome to My second Lab</h1>
+    <table>
+    {% block table %}
+    
+    {% endblock %}
+    </table>
+
+    
+
+    
+
+   
+
+<footer style="
+  background:#0f1724;
+  color:#e6eef8;
+  padding:30px 0;
+  text-align:center;
+  font-family: Inter, system-ui, sans-serif;
+  margin-top:40px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 -6px 18px rgba(2,6,23,0.45);
+  flex-direction: column;
+  -ms-flex-align: bottom;
+">
+ 
+    <div style="margin-bottom:14px;">
+      <a href="#home" style="color:#9fb0c8;text-decoration:none;margin:0 10px;">Home</a>
+      <a href="#about" style="color:#9fb0c8;text-decoration:none;margin:0 10px;">About</a>
+    </div>
+
+    <div style="font-size:13px;color:#64748b;">
+      © <span id="year"></span> MySite
+    </div>
+  </div>
+
+ 
+</footer>
+
+  
+  </body>
+</html>
