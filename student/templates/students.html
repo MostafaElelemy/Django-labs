@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Students List</title>
+    <link rel="stylesheet" href="{% static 'yourapp/style.css' %}" />
+  </head>
+  <body>
+    <h1>Students List</h1>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+        <th>Action</th>
+      </tr>
+      {% for s in students %}
+      <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.age }}</td>
+        <td>{{ s.grade }}</td>
+        <td>
+          <form action="{% url 'delete_student' s.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <div style="text-align: center">
+      <a href="{% url 'home' %}">Back to Home</a>
+    </div>
+  </body>
+</html>
